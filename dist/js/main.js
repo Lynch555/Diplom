@@ -16,7 +16,17 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sendForm */ \"./modules/sendForm.js\");\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_sendForm__WEBPACK_IMPORTED_MODULE_1__.sendForm)();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sendForm */ \"./modules/sendForm.js\");\n/* harmony import */ var _modules_scrollTop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrollTop */ \"./modules/scrollTop.js\");\n/* harmony import */ var _modules_addDots__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/addDots */ \"./modules/addDots.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./modules/smoothScroll.js\");\n/* harmony import */ var _modules_topSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/topSlider */ \"./modules/topSlider.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_sendForm__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_scrollTop__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_modules_addDots__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n(0,_modules_topSlider__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\r\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(); \r\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/addDots.js":
+/*!****************************!*\
+  !*** ./modules/addDots.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addDots = function () {\r\n\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addDots);\n\n//# sourceURL=webpack:///./modules/addDots.js?");
 
 /***/ }),
 
@@ -30,6 +40,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./modules/scrollTop.js":
+/*!******************************!*\
+  !*** ./modules/scrollTop.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst scrollTop = () => {\r\n    const scrollButton = document.querySelector('.up');\r\n    const top = document.querySelector('.top-slider');\r\n    scrollButton.style.display = 'none';\r\n    const scrollTo = (element) => {\r\n    window.scroll({\r\n        left: 0,\r\n        top: element.offsetTop,\r\n        behavior: 'smooth',\r\n    });\r\n    };\r\n\r\n    scrollButton.addEventListener('click', () => {\r\n        scrollTo(top);\r\n        \r\n    });\r\n    window.addEventListener('scroll', () => {\r\n        if(window.pageYOffset > 150) {\r\n            scrollButton.style.display = 'block';\r\n        } else {\r\n            scrollButton.style.display = 'none';\r\n        }\r\n    });\r\n    \r\n    \r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollTop);\n\n//# sourceURL=webpack:///./modules/scrollTop.js?");
+
+/***/ }),
+
 /***/ "./modules/sendForm.js":
 /*!*****************************!*\
   !*** ./modules/sendForm.js ***!
@@ -37,6 +57,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst sendForm = () => {\r\n    \r\n\r\n    \r\n        \r\n\r\n    \r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendForm);\n\n//# sourceURL=webpack:///./modules/sendForm.js?");
+
+/***/ }),
+
+/***/ "./modules/smoothScroll.js":
+/*!*********************************!*\
+  !*** ./modules/smoothScroll.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst smoothScroll = () => {\r\n    const links = document.querySelectorAll('.top-menu > ul > li > a');\r\n    \r\n    for(let i = 0; i < links.length; i++) {\r\n\r\n        links[i].addEventListener('click', (event) => {\r\n            event.preventDefault();\r\n            let target = event.target;\r\n            const blockID = target.getAttribute('href');\r\n            document.querySelector(blockID).scrollIntoView({\r\n                behavior: \"smooth\",\r\n                block: \"start\",\r\n                });\r\n        });\r\n    }\r\n    \r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (smoothScroll);\n\n//# sourceURL=webpack:///./modules/smoothScroll.js?");
+
+/***/ }),
+
+/***/ "./modules/topSlider.js":
+/*!******************************!*\
+  !*** ./modules/topSlider.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst topSlider = () => {\r\n  const sliderItems = document.querySelectorAll('.item');\r\n  const textSlider = document.querySelectorAll('.table');\r\n  \r\n  let slideIndex = 0,\r\n      interval,\r\n      slide = sliderItems[slideIndex];\r\n  for(let i = 0; i < textSlider.length; i++) {\r\n      textSlider[i].style.visibility = 'visible';\r\n      textSlider[i].style.opacity = '1'; \r\n  }\r\n  \r\n  \r\n  const nextSlide = () => {\r\n      slide.style.display = 'block';\r\n  };\r\n\r\n  const prevSlide = () => {\r\n      slide.style.display = 'none';\r\n        \r\n  };\r\n\r\n  const autoPlay = () => {\r\n      prevSlide();\r\n      slideIndex++;\r\n      if (slideIndex >= sliderItems.length) {\r\n          slideIndex = 0;\r\n      }\r\n      slide = sliderItems[slideIndex];\r\n      nextSlide();\r\n  };\r\n  \r\n  const runSlider = (time = 3000) => {\r\n      interval = setInterval(autoPlay, time);\r\n  };\r\n  runSlider();\r\n\r\n\r\n\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (topSlider);\n\n//# sourceURL=webpack:///./modules/topSlider.js?");
 
 /***/ })
 
