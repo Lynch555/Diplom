@@ -16,17 +16,27 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_first__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/first */ \"./modules/first.js\");\n\r\n\r\n(0,_modules_first__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sendForm */ \"./modules/sendForm.js\");\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_sendForm__WEBPACK_IMPORTED_MODULE_1__.sendForm)();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
-/***/ "./modules/first.js":
+/***/ "./modules/modal.js":
 /*!**************************!*\
-  !*** ./modules/first.js ***!
+  !*** ./modules/modal.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst first = () => {\r\n    console.log('first');\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (first);\n\n//# sourceURL=webpack:///./modules/first.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => {\r\n    const menu = document.getElementById('callback'),\r\n        overlay = document.querySelector('.modal-overlay'),\r\n        modalClose = document.querySelector('.modal-close');\r\n        \r\n    const showModal = () => {\r\n        overlay.style.display = 'block';\r\n        menu.style.display = 'block';\r\n    };\r\n    const closeModal = () => {\r\n        overlay.style.display = 'none';\r\n        menu.style.display = 'none';\r\n    };\r\n    document.addEventListener('click', (event) => {\r\n        \r\n        let target = event.target;\r\n        \r\n        if (target.matches('a.callback-btn') || target.classList.contains('fancyboxModal')) {\r\n            showModal();\r\n        } \r\n        if (target === overlay || target.closest('.modal-close') || target === modalClose) {\r\n            closeModal();\r\n        }\r\n    });\r\n\r\n    \r\n\r\n\r\n\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack:///./modules/modal.js?");
+
+/***/ }),
+
+/***/ "./modules/sendForm.js":
+/*!*****************************!*\
+  !*** ./modules/sendForm.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst sendForm = () => {\r\n    \r\n\r\n    \r\n        \r\n\r\n    \r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendForm);\n\n//# sourceURL=webpack:///./modules/sendForm.js?");
 
 /***/ })
 
