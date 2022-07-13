@@ -1,15 +1,17 @@
 import modal from './modules/modal';
-import sendForm from "./modules/sendForm";
 import scrollTop from './modules/scrollTop';
-import addDots from "./modules/addDots.js";
+import sendForm from "./modules/sendForm";
 import smoothScroll from './modules/smoothScroll';
 import topSlider from './modules/topSlider';
+import accordeon from './modules/accordeon';
 
 
 modal();
-sendForm();
 scrollTop();
-addDots();
+sendForm();
+smoothScroll();
 topSlider();
-smoothScroll(); 
+accordeon(); 
+
+
 

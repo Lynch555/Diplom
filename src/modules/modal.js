@@ -1,7 +1,7 @@
 const modal = () => {
-    const menu = document.getElementById('callback'),
-        overlay = document.querySelector('.modal-overlay'),
-        modalClose = document.querySelector('.modal-close');
+    const menu = document.getElementById('callback');
+    const overlay = document.querySelector('.modal-overlay');
+    const modalClose = document.querySelector('.modal-close');
         
     const showModal = () => {
         overlay.style.display = 'block';
@@ -12,7 +12,7 @@ const modal = () => {
         menu.style.display = 'none';
     };
     document.addEventListener('click', (event) => {
-        
+        event.preventDefault();
         let target = event.target;
         
         if (target.matches('a.callback-btn') || target.classList.contains('fancyboxModal')) {

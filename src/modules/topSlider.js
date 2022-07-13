@@ -37,7 +37,5 @@ const topSlider = () => {
   };
   runSlider();
 
-
-
 };
 export default topSlider;

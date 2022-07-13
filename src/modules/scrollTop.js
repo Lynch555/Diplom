@@ -21,7 +21,5 @@ const scrollTop = () => {
             scrollButton.style.display = 'none';
         }
     });
-    
-    
 };
 export default scrollTop;
