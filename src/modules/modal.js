@@ -22,10 +22,5 @@ const modal = () => {
             closeModal();
         }
     });
-
-    
-
-
-
 };
 export default modal;
