@@ -1,7 +1,7 @@
 const topSlider = () => {
   const sliderItems = document.querySelectorAll('.item');
   const textSlider = document.querySelectorAll('.table');
-  const dots = document.querySelectorAll('.dot');
+//   const dots = document.querySelectorAll('.dot');
 
   
   let slideIndex = 0,
@@ -38,4 +38,5 @@ const topSlider = () => {
   runSlider();
 
 };
+
 export default topSlider;
