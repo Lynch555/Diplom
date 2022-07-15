@@ -12,13 +12,15 @@ const modal = () => {
         menu.style.display = 'none';
     };
     document.addEventListener('click', (event) => {
-        event.preventDefault();
+        
         let target = event.target;
         
         if (target.matches('a.callback-btn') || target.classList.contains('fancyboxModal')) {
+            event.preventDefault();
             showModal();
         } 
         if (target === overlay || target.closest('.modal-close') || target === modalClose) {
+            event.preventDefault();
             closeModal();
         }
     });

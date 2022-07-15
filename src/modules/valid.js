@@ -14,7 +14,9 @@ const valid = () => {
         });
     };
 
-    valid(name, /[^а-яА-Я\s\-]+/, /[а-яА-Я\s\-]+/gi);
+    valid(name, /[^а-яА-Я\.\-]+/, /[а-яА-Я\.\-]+/gi);
     valid(tel, /[^\+\d]+/, /[\+\d]+/g);
 };
 export default valid;
+
+
