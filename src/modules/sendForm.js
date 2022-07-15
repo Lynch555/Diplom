@@ -1,70 +1,82 @@
 const sendForm = () => {
-    const errorMessage = 'Ошибка',
-        loadMessage = 'Идет отправка...',
-        successMessage = 'Отправлено!',
-        menu = document.getElementById('callback'),
-        overlay = document.querySelector('.modal-overlay'),
-        formModal = document.querySelector('form');
+    const form = document.querySelector('.rf form[name="form-callback"]');
+    const formInput = form.querySelectorAll('.form-control');
+    const statusBlock = document.createElement('div');
+    const loadText = 'Идет отправка...';
+    const errorText = 'Ошибка...';
+    const successText = 'Отправлено';
 
-    
-    const statusMessage = document.createElement('div');
-    statusMessage.style.cssText = 'font-size 2rem;';
+    const validate = (list) => {
+        let success = true;
 
-    const postData = (body) => fetch('./server.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        list.forEach(input => {
+            if (!input.classList.contains('success')) {
+                success = false;
+            }
+        });
+
+        return success;
+    };
+
+    const sendData = (data) => {
+        return fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => res.json());
+    };
+
+    const submitForm = () => {
+        const formData = new FormData(form);
+        const formBody = {};
+
+        statusBlock.textContent = loadText;
+        form.append(statusBlock);
+
+        formData.forEach((val, key) => {
+            formBody[key] = val;
+        });
+
+        console.log('submit');
+
+        if (validate(formInput)) {
+            sendData(formBody)
+                .then(data => {
+                    statusBlock.textContent = successText;
+
+                    formInput.forEach(input => {
+                        input.value = '';
+                    });
+                })
+                .catch(error => {
+                    statusBlock.textContent = errorText;
+                });
+        } else {
+            statusBlock.textContent = 'Заполните поля';
+        }
+    };
+
+    formInput.forEach(input => {
+        input.addEventListener('input', (e) => {
+
+        });
     });
 
-    
-        formModal.addEventListener('submit', (event) => {
-            const target = event.target;
-            event.preventDefault();
-            formModal.appendChild(statusMessage);
-            statusMessage.style.color = 'black';
-            const formElem = [...target.elements].filter(item => item.tagName.toLowerCase() !== 'button');
-            const formData = new FormData(target);
-            let body = {};
-            formData.forEach((val, key) => {
-                body[key] = val;
-            });
-            
-            if (formElem[0].value !== '' && formElem[1].value !== '') {
-                statusMessage.textContent = loadMessage;
-                postData(body)
-                .then((response) => {
-                    if (response.status !== 200) {
-                        throw new Error('network failed');
-                    }
-                    statusMessage.textContent = successMessage;
-                    setTimeout(() => {
-                        statusMessage.textContent = '';
-                        overlay.style.display = 'none';
-                        menu.style.display = 'none';
-                    }, 3000);
-                    formElem.forEach(item => {
-                        if(item.type !== 'submit') {
-                        item.value = '';
-                        }
-                    });
+    try {
+        if (!form) {
+            throw new Error('Форма отсутствует');
+        }
 
-                })
-                .catch((error) => {
-                    statusMessage.textContent = errorMessage;
-                    console.log(error);
-                    setTimeout(() => {
-                        statusMessage.textContent = '';
-                    }, 5000);
-                });
-            formModal.querySelectorAll('input').forEach((item) => {
-                if(item.type !== 'submit') {
-                item.value = '';
-                }
-            });
-            } else {
-                event.preventDefault();
-                alert('Введите корректные данные');
-            }
-        });    
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            submitForm();
+        });
+    } catch (error) {
+        console.log(error.message);
+    }
 };
+
 export default sendForm;

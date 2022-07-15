@@ -4,7 +4,7 @@ import sendForm from "./modules/sendForm";
 import smoothScroll from './modules/smoothScroll';
 import topSlider from './modules/topSlider';
 import accordeon from './modules/accordeon';
-import inputValidation from './modules/inputValidation';
+import valid from './modules/valid';
 import addDots from "./modules/addDots";
 import services from './modules/services';
 
@@ -17,7 +17,7 @@ sendForm();
 smoothScroll();
 topSlider();
 accordeon(); 
-inputValidation();
+valid();
 addDots();
 services();
 
