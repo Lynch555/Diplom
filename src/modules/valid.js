@@ -10,7 +10,6 @@ const valid = () => {
             } else if (testReg.test(e.target.value)) {
                 e.target.classList.add('success');
             }
-
         });
     };
 

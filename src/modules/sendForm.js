@@ -4,7 +4,7 @@ const sendForm = () => {
     const statusBlock = document.createElement('div');
     const loadText = 'Идет отправка...';
     const errorText = 'Ошибка...';
-    const successText = 'Отправлено';
+    const successText = 'Отправлено!';
 
     const validate = (list) => {
         let success = true;
